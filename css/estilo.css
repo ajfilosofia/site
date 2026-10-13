@@ -1,0 +1,129 @@
+/* Site de Andrews Jobim — estilos */
+
+/* Fonte hospedada no próprio site (Chakra Petch Bold, licença SIL OFL).
+   Coloque os arquivos na pasta fonts/ — veja fonts/LEIA-ME.txt.
+   Enquanto não estiverem lá, o navegador usa uma fonte do sistema. */
+@font-face {
+  font-family: "Chakra Petch";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/ChakraPetch-Bold.woff2") format("woff2"),
+       url("../fonts/ChakraPetch-Bold.ttf") format("truetype");
+}
+
+:root {
+  --bg: #000;
+  --ink: #ececec;
+  --muted: #9a9a9a;
+  --line: #2b2b2b;
+  --accent: #ff6a00;
+  --square: "Chakra Petch", Bahnschrift, "Arial Narrow", system-ui, sans-serif;
+  color-scheme: dark;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); background: var(--bg); }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 1.0625rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Três palavras: grandes em qualquer tela, espalhadas esquerda / centro / direita */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(.5rem, 2vw, 1.5rem);
+  padding: 2rem clamp(1rem, 4vw, 3rem) 0;
+  overflow: hidden;
+}
+.hero span {
+  display: block;
+  max-width: 100%;
+  font-family: var(--square);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-size: clamp(2.25rem, 10.5vw, 9rem);
+  line-height: .95;
+  letter-spacing: -.01em;
+}
+.hero span { align-self: center; text-align: center; transform-origin: center; }
+
+/* Crescimento leve ao passar o mouse (só em dispositivos com mouse) */
+.hero span { width: fit-content; transition: transform .25s ease; }
+@media (hover: hover) {
+  .hero span:hover { transform: scale(1.05); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero span { transition: none; }
+}
+
+.nome {
+  align-self: center;
+  margin: clamp(1rem, 3vw, 2rem) 0 0;
+  font: 700 clamp(1.5rem, 4vw, 2.5rem)/1.2 var(--square);
+  color: var(--ink);
+  text-align: center;
+}
+.links {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 1.25rem 0 1.5rem;
+}
+.links a { font-family: var(--square); font-weight: 700; font-size: 1.05rem; text-decoration: none; padding: .25rem 0; border-bottom: 2px solid transparent; }
+.links a:hover { border-bottom-color: var(--accent); }
+.links.perfis { padding: 1.5rem 0 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.foto { margin: 0 auto 2rem; width: min(100%, 20rem); }
+.foto + h2 { margin-top: 0; }
+.foto img, .foto .reserva { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; }
+.foto .reserva { display: grid; place-items: center; border: 2px dashed var(--line); color: var(--muted); font: 700 1rem/1.4 var(--square); text-align: center; padding: 1rem; }
+
+main { max-width: 44rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+h2 { font: 700 1.75rem/1.2 var(--square); text-transform: uppercase; color: var(--accent); margin: 3.5rem 0 1rem; }
+h2:first-child { margin-top: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+p { margin: 0 0 1rem; }
+
+h3 { font: 700 1.25rem/1.3 var(--square); margin: 2.5rem 0 .75rem; }
+.pubs { list-style: none; margin: 0; padding: 0; }
+.pubs li { padding: 1.1rem 0; border-top: 1px solid var(--line); }
+.pubs li:last-child { border-bottom: 1px solid var(--line); }
+.pubs strong { display: block; font-weight: 600; }
+.pubs .acessar { display: inline-block; margin-top: .4rem; font: 700 .95rem var(--square); }
+.pubs small { color: var(--muted); font-size: .95rem; }
+
+footer { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem 3rem; color: var(--muted); font-size: .9rem; }
+
+/* Botão de voltar ao topo */
+.topo {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right, 0px));
+  bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  width: 3rem; height: 3rem;
+  display: grid; place-items: center;
+  border: 0; border-radius: 50%;
+  background: var(--accent); color: #000;
+  cursor: pointer;
+  opacity: 0; visibility: hidden; transform: translateY(.5rem);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s;
+}
+.topo.visivel { opacity: 1; visibility: visible; transform: none; }
+.topo:hover { transform: scale(1.08); }
+.topo:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.topo svg { width: 1.4rem; height: 1.4rem; }
+@media (prefers-reduced-motion: reduce) { .topo { transition: none; } }
