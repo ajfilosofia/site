@@ -1,0 +1,22 @@
+---
+layout: default
+title: Blog
+---
+<h1 class="blog-titulo">Blog</h1>
+
+{% if site.posts.size > 0 %}
+<ul class="lista">
+  {% for post in site.posts %}
+  {% assign r = post.resumo | default: post.excerpt %}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{% include data.html d=post.date %}</time>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p>{{ r | strip_html | strip | truncatewords: 35 }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>Em breve, novos textos.</p>
+{% endif %}
+
+<p class="rss"><a href="{{ '/feed.xml' | relative_url }}">Assinar por RSS</a></p>

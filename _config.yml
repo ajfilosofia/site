@@ -1,0 +1,17 @@
+# Configuração do Jekyll (blog)
+title: Andrews Jobim
+description: Textos sobre ensino de filosofia, tecnologias digitais e cibercultura.
+lang: pt-BR
+url: "https://andrewsjobim.com"
+baseurl: ""
+timezone: America/Sao_Paulo
+
+# Endereço de cada texto: andrewsjobim.com/blog/nome-do-texto/
+permalink: /blog/:title/
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - README.md
+  - fonts/LEIA-ME.txt
