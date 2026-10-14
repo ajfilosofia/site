@@ -127,3 +127,16 @@ footer { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem 3rem; color: var(-
 .topo:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 .topo svg { width: 1.4rem; height: 1.4rem; }
 @media (prefers-reduced-motion: reduce) { .topo { transition: none; } }
+
+/* Botão "Mostrar e-mail" */
+.btn-email {
+  font: 700 1rem var(--square);
+  color: #000;
+  background: var(--accent);
+  border: 0;
+  padding: .7rem 1.25rem;
+  cursor: pointer;
+}
+.btn-email:hover { filter: brightness(1.12); }
+.btn-email:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+#email-resultado a { font-weight: 600; }
