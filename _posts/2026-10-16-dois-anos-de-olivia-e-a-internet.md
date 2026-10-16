@@ -1,6 +1,6 @@
 ---
 title: "Dois anos de Olívia e a Internet"
-resumo: "Comentário sobre o aniversário de dois anos de lançamento"
+resumo: "Comentário sobre o aniversário de dois anos de lançamento."
 ---
 
 Apesar de ter sido no mês passado, não queria deixar de comentar o aniversário de dois anos do lançamento do livro *Olívia e a Internet*.
