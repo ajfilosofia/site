@@ -1,6 +1,6 @@
 ---
 title: "Casa nova, cara nova"
-resumo: "Inaugurando a nova versão do site"
+resumo: "Inaugurando a nova versão do site."
 ---
 Depois de um certo tempo incomodado com a antiga versão do site, resolvi aproveitar um tempo livre e, finalmente, trabalhar na construção desta nova apresentação. 
 
