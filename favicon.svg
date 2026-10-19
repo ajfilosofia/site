@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">Cubo AJφ</title>
+  <desc id="desc">Cubo isométrico em tons de cinza, com A na face esquerda, J na face direita e phi na face superior. Fundo transparente.</desc>
+  <g stroke-linejoin="round">
+    <!-- Face superior -->
+    <polygon points="128,18 226,73 128,129 30,73" fill="#55565A"/>
+    <!-- Face esquerda -->
+    <polygon points="30,73 128,129 128,238 30,181" fill="#B8B8BA"/>
+    <!-- Face direita -->
+    <polygon points="226,73 128,129 128,238 226,181" fill="#292A2D"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="central">
+    <!-- Letras orientadas conforme cada face -->
+    <text x="128" y="74" font-size="58" font-weight="bold" fill="#F2F2F2">φ</text>
+    <text x="79" y="153" font-size="65" font-weight="bold" fill="#292A2D" transform="rotate(30 79 153)">A</text>
+    <text x="177" y="153" font-size="65" font-weight="bold" fill="#F2F2F2" transform="rotate(-30 177 153)">J</text>
+  </g>
+</svg>
