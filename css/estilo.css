@@ -140,3 +140,8 @@ footer { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem 3rem; color: var(-
 .btn-email:hover { filter: brightness(1.12); }
 .btn-email:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 #email-resultado a { font-weight: 600; }
+
+/* Lista dos princípios dentro de um projeto: sem marcadores e sem linhas */
+.pubs .principios { list-style: none; margin: 0 0 .75rem; padding: 0; }
+.pubs .principios li,
+.pubs .principios li:last-child { border: 0; padding: .15rem 0; }
